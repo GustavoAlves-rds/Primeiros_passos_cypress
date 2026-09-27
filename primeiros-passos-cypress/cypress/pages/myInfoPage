@@ -1,9 +1,9 @@
 class MyInfoPage{
     selectorlist (){
         const selectors = {
-             firtNameFiled: "[name='firstName']",
+            firtNameFiled: "[name='firstName']",
             lastNameFild: "[name='lastName']",
-            EmployeeID: ".oxd-input",
+            employeeID: ".oxd-input",
             otherID: ".oxd-input",
             driverLicense: ".oxd-input",
             licenseExpiry:".oxd-input",
@@ -15,5 +15,24 @@ class MyInfoPage{
 
         return selectors
     }
+    fillPersonalDetails(firstName,lastName){
+        cy.get(this.selectorlist().firtNameFiled).clear().type(firstName)
+        cy.get(this.selectorlist().lastNameFild).clear().type(lastName)
+    }
+
+    fillPersonalEmployee (employeeID,otherID,driverLicense,licenseExpiry){
+        cy.get(this.selectorlist().employeeID).eq(4).clear().type(employeeID)
+        cy.get(this.selectorlist().otherID).eq(5).clear().type(otherID)
+        cy.get(this.selectorlist().driverLicense).eq(6).clear().type(driverLicense)
+        cy.get(this.selectorlist().dateField).eq(0).clear().type(licenseExpiry)
+        cy.get(this.selectorlist().dataCloseButton).click()
+        cy.get(this.selectorlist().genderButton).eq(0).click()
+    }
+    saveForm(){
+        cy.get(this.selectorlist().saveButton).eq(0).click({force: true}) 
+        cy.get('body').should('contain','Successfully Updated')
+    }
+ 
+
 }
  export default MyInfoPage

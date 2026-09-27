@@ -11,6 +11,7 @@ selectorList(){
 accessMyInfo(){
 cy.get(this.selectorList().myInfoButton).click()
 }
+
 }
 
 export default MenuPage

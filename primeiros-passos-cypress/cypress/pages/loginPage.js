@@ -4,7 +4,7 @@ class LoginPage {
         usernameField: '[name="username"]',
         passwordFild: '[name="password"]',
         loginButton: '.oxd-button',
-          wrongCredentialAlert: '.oxd-alert-content > .oxd-text',
+        wrongCredentialAlert: '.oxd-alert-content > .oxd-text',
     }
       return selectors
    }
@@ -17,6 +17,10 @@ loginWithUser(username,password){
     cy.get(this.selectorlist().usernameField).type(username)
     cy.get(this.selectorlist().passwordFild).type(password)
     cy.get(this.selectorlist().loginButton).click()
+}
+
+checkacessInvalid(){
+    cy.get(this.selectorlist().wrongCredentialAlert)
 }
 
 
