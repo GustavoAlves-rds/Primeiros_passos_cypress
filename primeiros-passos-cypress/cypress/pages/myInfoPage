@@ -1,0 +1,19 @@
+class MyInfoPage{
+    selectorlist (){
+        const selectors = {
+             firtNameFiled: "[name='firstName']",
+            lastNameFild: "[name='lastName']",
+            EmployeeID: ".oxd-input",
+            otherID: ".oxd-input",
+            driverLicense: ".oxd-input",
+            licenseExpiry:".oxd-input",
+            dateField: "[placeholder='yyyy-dd-mm']",
+            dataCloseButton: ".--close",
+            genderButton: ".oxd-radio-input",
+            saveButton: ".oxd-button--secondary"
+        }
+
+        return selectors
+    }
+}
+ export default MyInfoPage

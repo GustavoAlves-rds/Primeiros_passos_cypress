@@ -1,0 +1,18 @@
+class DashboardPage{
+
+ selectorList(){
+
+    const selectors = {
+        dashboardGrid: '.oxd-topbar-header-breadcrumb-module',
+    }
+
+    return selectors
+ }
+
+    checkDashboarPage(){
+        cy.location ('pathname').should ('equal','/web/index.php/dashboard/index')
+    }
+
+}
+
+export default DashboardPage
